@@ -2,10 +2,10 @@ const header = document.querySelector('header');
 const nav = document.createElement('nav');
 const ul = document.createElement('ul');
 
-const links = [    {text: 'Home', href: 'home.html'},
-{text: 'About', href: 'about.html'},
-{text: 'Blog', href: 'blog.html'},
-{text: 'Contact', href: 'contact.html'},];
+const links = [    {text: 'Home', href: '../index.html'},
+{text: 'About', href: '../about.html'},
+{text: 'Blog', href: '../blog.html'},
+{text: 'Contact', href: '../contact.html'},];
 
 for (let i = 0; i < links.length; i++) {
     const li = document.createElement('li');
