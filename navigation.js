@@ -2,7 +2,7 @@ const header = document.querySelector('header');
 const nav = document.createElement('nav');
 const ul = document.createElement('ul');
 
-const links = [    {text: 'Home', href: 'home.html'},
+const links = [    {text: 'Home', href: 'index.html'},
 {text: 'About', href: 'about.html'},
 {text: 'Blog', href: 'blog.html'},
 {text: 'Contact', href: 'contact.html'},];
