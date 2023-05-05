@@ -132,9 +132,11 @@
   
   li {
     margin-bottom: 5px; /* adds spacing between the list items */
-    padding-left: 20px; /* adds padding to the left of the list */
+    padding-left: 10px; /* adds padding to the left of the list */
   }
   nav h1 {
     text-align: left;
   }
-  
+  p {
+  margin-bottom: 50px; /* set to your desired value */
+  }
