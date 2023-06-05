@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import os
 
 # Directory where your blog posts are stored
@@ -9,7 +10,8 @@ post_files = os.listdir(post_dir)
 # Create a list of links to each blog post
 post_links = ""
 for post_file in post_files:
-    post_links += f"<li><a href='posts/{post_file}'>{post_file}</a></li>"
+    if post_file.endswith(".html"):
+        post_links += f"<li><a href='posts/{post_file}'>{post_file}</a></li>"
 
 # Generate the HTML code for the blog page
 html = f"""
@@ -26,7 +28,7 @@ html = f"""
       <h1>Joe Howie</h1>
       <script src="navigation.js"></script>
     </header>
-  
+
 <main>
     <h1>My Blog</h1>
     {post_links}
