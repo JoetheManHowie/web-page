@@ -8,7 +8,7 @@ def convert_markdown_to_html(input_file, output_file):
         markdown_content = f.read()
 
     # Convert Markdown to HTML
-    html_content = markdown.markdown(markdown_content)
+    html_content = markdown.markdown(markdown_content, extensions=['codehilite'])
 
     # Write the HTML content to the output file
     with open(output_file, 'w') as f:

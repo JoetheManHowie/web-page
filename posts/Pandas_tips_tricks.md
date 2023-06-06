@@ -1,16 +1,17 @@
 # Pandas: tips and tricks
 
-On a day to day basis, I use the python library pandas in order to preform many of the data mining tasks I do.  Pandas is a wonderful library that a wide range of functionality, from operating similarly to a relational database to visualizing data driven results, the Pandas library allows for efficient data manipulation at scale in python.
+On a day to day basis, I use the python library pandas in order to preform many different data mining tasks.  Pandas is a wonderful library that a wide range of functionality, from operating similarly to a relational database to visualizing data driven results, the Pandas library allows for efficient data manipulation at scale in python.
 
 
 The fundamental Object in the pandas library is `DataFrame`. As the name suggests, this class holds are data in a framework (or table) and has many methods for interacting with the dataset. A DataFrame, simply put, is a list columns with rows containing data entries for each column. For example say we are collecting temperature and pressure measurements in the Pacific Ocean. We want to know the temperature, pressure, location (longitude, latitude, and altitude), and the time the measurement was taken. So we have six column headers; temperature, pressure, longitude, latitude, altitude, and time. Suppose we survey 5 locations in the Pacific, then there is 5 rows in table of collected data. That is,
 
-temperature | pressure | longitude | latitude | altitude | time
-55.5 | 1021 | -140 | 46 | -100 | 07:00
-56.5 | 1024 | -180 | 46 | -101 | 10:00
-55.8 | 1022 | -140 | 56 | -97 | 12:00
-54.5 | 1020 | -180 | 36 | -102 | 18:00
-57.5 | 1025 | -140 | 36 | -99 | 20:00
+| temperature | pressure | longitude | latitude | altitude | time |
+|--------------|-----------|------------|-------------|-----------|------------|
+| 55.5 | 1021 | -140 | 46 | -100 | 07:00 |
+| 56.5 | 1024 | -180 | 46 | -101 | 10:00 |
+| 55.8 | 1022 | -140 | 56 | -97 | 12:00 |
+| 54.5 | 1020 | -180 | 36 | -102 | 18:00 |
+| 57.5 | 1025 | -140 | 36 | -99 | 20:00 |
 
 *The units for temperature are Fahrenheit, kilo-Pascals for pressure, and meters below sea level for altitude. Note the data in the above table is made up whole cloth. We leave is as an exercise for the interested physics student to identify the inconsistencies. For instance, how fast would the boat have to travel in order to arrive at each location and carry out the measurements at the stated times? Or was the path taken by the surveyor's the most time efficient for the locations they visited?*
 
@@ -43,4 +44,27 @@ If you have your data already in a python script; because it is generated in you
 Using our example from above, suppose that we have six python list each with the measurements for the six columns. That is, the index of each list correspond to the row indices of the DataFrame we wish to build.
 
 ```python
-!cat python_example_scripts/make_a_DataFrame.py
+import pandas as pd
+
+## data as a python list
+temp =  [55.5, 56.5, 55.8, 54.5, 57.5]
+pres = [1021, 1024, 1022, 1020, 1025]
+long = [-140, -180, -140, -180, -140]
+lati = [46, 46, 56, 36, 36]
+alti = [-100, -101, -97, -102, -99]
+time = ["07:00", "10:00", "12:00", "18:00", "20:00"]
+
+## make a dictionary with keys the column names
+data = {"temperature": temp,
+        "pressure": pres,
+        "longitude": long,
+        "latitude": lati,
+        "altitude": alti,
+        "time": time}
+
+## create DataFrame
+df = pd.DataFrame(data)
+
+## print table to terminal
+print(df)
+```
