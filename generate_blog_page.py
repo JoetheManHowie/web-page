@@ -11,7 +11,8 @@ post_files = os.listdir(post_dir)
 post_links = ""
 for post_file in post_files:
     if post_file.endswith(".html"):
-        post_links += f"<li><a href='posts/{post_file}'>{post_file}</a></li>"
+        post_file_name = " ".join(post_file.split(".")[0].split("_"))
+        post_links += f"<li><a href='posts/{post_file}'>{post_file_name}</a></li>"
 
 # Generate the HTML code for the blog page
 html = f"""
