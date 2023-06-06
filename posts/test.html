@@ -1,13 +1,60 @@
 <h1>Pandas: tips and tricks</h1>
 <p>On a day to day basis, I use the python library pandas in order to preform many different data mining tasks.  Pandas is a wonderful library that a wide range of functionality, from operating similarly to a relational database to visualizing data driven results, the Pandas library allows for efficient data manipulation at scale in python.</p>
 <p>The fundamental Object in the pandas library is <code>DataFrame</code>. As the name suggests, this class holds are data in a framework (or table) and has many methods for interacting with the dataset. A DataFrame, simply put, is a list columns with rows containing data entries for each column. For example say we are collecting temperature and pressure measurements in the Pacific Ocean. We want to know the temperature, pressure, location (longitude, latitude, and altitude), and the time the measurement was taken. So we have six column headers; temperature, pressure, longitude, latitude, altitude, and time. Suppose we survey 5 locations in the Pacific, then there is 5 rows in table of collected data. That is,</p>
-<p>| temperature | pressure | longitude | latitude | altitude | time |
-|--------------|-----------|------------|-------------|-----------|------------|
-| 55.5 | 1021 | -140 | 46 | -100 | 07:00 |
-| 56.5 | 1024 | -180 | 46 | -101 | 10:00 |
-| 55.8 | 1022 | -140 | 56 | -97 | 12:00 |
-| 54.5 | 1020 | -180 | 36 | -102 | 18:00 |
-| 57.5 | 1025 | -140 | 36 | -99 | 20:00 |</p>
+<p><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>temperature</th>
+      <th>pressure</th>
+      <th>longitude</th>
+      <th>latitude</th>
+      <th>altitude</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>55.5</td>
+      <td>1021</td>
+      <td>-140</td>
+      <td>46</td>
+      <td>-100</td>
+      <td>07:00</td>
+    </tr>
+    <tr>
+      <td>56.5</td>
+      <td>1024</td>
+      <td>-180</td>
+      <td>46</td>
+      <td>-101</td>
+      <td>10:00</td>
+    </tr>
+    <tr>
+      <td>55.8</td>
+      <td>1022</td>
+      <td>-140</td>
+      <td>56</td>
+      <td>-97</td>
+      <td>12:00</td>
+    </tr>
+    <tr>
+      <td>54.5</td>
+      <td>1020</td>
+      <td>-180</td>
+      <td>36</td>
+      <td>-102</td>
+      <td>18:00</td>
+    </tr>
+    <tr>
+      <td>57.5</td>
+      <td>1025</td>
+      <td>-140</td>
+      <td>36</td>
+      <td>-99</td>
+      <td>20:00</td>
+    </tr>
+  </tbody>
+</table></p>
 <p><em>The units for temperature are Fahrenheit, kilo-Pascals for pressure, and meters below sea level for altitude. Note the data in the above table is made up whole cloth. We leave is as an exercise for the interested physics student to identify the inconsistencies. For instance, how fast would the boat have to travel in order to arrive at each location and carry out the measurements at the stated times? Or was the path taken by the surveyor's the most time efficient for the locations they visited?</em></p>
 <h2>Installing Pandas</h2>
 <p>To install the pandas library, use the pip package manager and type the following into your terminal</p>
@@ -26,24 +73,27 @@
 <h2>Building a DataFrame from Scratch</h2>
 <p>If you have your data already in a python script; because it is generated in your code; or stored as a series of lists; or in a python dictionary; then you can add it to a DataFrame directly by calling the object.</p>
 <p>Using our example from above, suppose that we have six python list each with the measurements for the six columns. That is, the index of each list correspond to the row indices of the DataFrame we wish to build.</p>
-<p>```python
-import pandas as pd</p>
-<h2>data as a python list</h2>
-<p>temp =  [55.5, 56.5, 55.8, 54.5, 57.5]
+<pre><code class="language-python">import pandas as pd
+
+## data as a python list
+temp =  [55.5, 56.5, 55.8, 54.5, 57.5]
 pres = [1021, 1024, 1022, 1020, 1025]
 long = [-140, -180, -140, -180, -140]
 lati = [46, 46, 56, 36, 36]
 alti = [-100, -101, -97, -102, -99]
-time = ["07:00", "10:00", "12:00", "18:00", "20:00"]</p>
-<h2>make a dictionary with keys the column names</h2>
-<p>data = {"temperature": temp,
-        "pressure": pres,
-        "longitude": long,
-        "latitude": lati,
-        "altitude": alti,
-        "time": time}</p>
-<h2>create DataFrame</h2>
-<p>df = pd.DataFrame(data)</p>
-<h2>print table to terminal</h2>
-<p>print(df)
-```</p>
+time = [&quot;07:00&quot;, &quot;10:00&quot;, &quot;12:00&quot;, &quot;18:00&quot;, &quot;20:00&quot;]
+
+## make a dictionary with keys the column names
+data = {&quot;temperature&quot;: temp,
+        &quot;pressure&quot;: pres,
+        &quot;longitude&quot;: long,
+        &quot;latitude&quot;: lati,
+        &quot;altitude&quot;: alti,
+        &quot;time&quot;: time}
+
+## create DataFrame
+df = pd.DataFrame(data)
+
+## print table to terminal
+print(df)
+</code></pre>

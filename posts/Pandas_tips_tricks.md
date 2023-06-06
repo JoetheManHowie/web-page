@@ -21,7 +21,7 @@ To install the pandas library, use the pip package manager and type the followin
 
 `pip install pandas`
 
-## import Pandas
+## Import Pandas
 
 Like many popular python libraries it is common practice to import pandas with the alias pd.
 
@@ -35,7 +35,12 @@ The easiest way to read data into a DataFrame is to use `pd.read_csv()` which as
 + `pd.read_pickle()` See [the docs page for more details](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_pickle.html)
 + `pd.read_html()` See [the docs page for more details](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_html.html)
 
-There are many more other file types, so take a look at [the docs](https://pandas.pydata.org/pandas-docs/stable/reference/api/) for more on these methods.
+There are many more other file types, so take a look at [the docs](https://pandas.pydata.org/pandas-docs/stable/reference/api/) for more on these methods. Below we give examples for importing data using the three methods above.
+
+### Read from csv
+
+A csv (or comma separated value) file that contains our temperature example is [linked here]()
+
 
 ## Building a DataFrame from Scratch
 
@@ -68,3 +73,7 @@ df = pd.DataFrame(data)
 ## print table to terminal
 print(df)
 ```
+
+## Adding data to a Dataframe
+
+Once you have a DataFrame like in the above code block, you can add rows using `pd.concat`.
