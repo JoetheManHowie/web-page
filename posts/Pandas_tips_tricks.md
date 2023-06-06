@@ -39,7 +39,7 @@ There are many more other file types, so take a look at [the docs](https://panda
 
 ### Read from csv
 
-A csv (or comma separated value) file that contains our temperature example is [linked here]()
+A csv (or comma separated value) file that contains our temperature example is [linked here](https://joehowie.ca/python_example_scripts/temperature_data.csv)
 
 
 ## Building a DataFrame from Scratch
