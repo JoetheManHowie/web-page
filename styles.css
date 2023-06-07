@@ -175,3 +175,12 @@ pre code span.string {
 pre code span.number {
   color: #d19a66;
 }
+
+
+a {
+  color: #00aaff; /* Replace with your desired color */
+}
+
+a:hover {
+  color: #0088cc; /* Replace with your desired color for hover effect */
+}
