@@ -51,7 +51,7 @@ See the docs page for more details on using [`pd.read_csv()`.](https://pandas.py
 
 #### Read from html
 
-Given that most of the world wide web consists of html pages, you are bound to run into to these table soon or later. We have prepared the temperature example data in a html format [available here.](view-source:https://joehowie.ca/example_scripts/Creating_a_pandas_df/temperature_data.html) Now that the data has been downloaded the following code can be executed to read the table into a pandas DataFrame.
+Given that most of the world wide web consists of html pages, you are bound to run into to these table soon or later. We have prepared the temperature example data in a html format [available here.](https://joehowie.ca/example_scripts/Creating_a_pandas_df/temperature_data.html) Now that the data has been downloaded the following code can be executed to read the table into a pandas DataFrame.
 
 ```python
 import pandas as pd

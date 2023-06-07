@@ -33,6 +33,7 @@ html = f"""
 
 <main>
     <h1>My Blog</h1>
+    </br>
     {post_links}
 
 </main>

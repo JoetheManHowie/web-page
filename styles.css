@@ -179,6 +179,7 @@ pre code span.number {
 
 a {
   color: #00aaff; /* Replace with your desired color */
+  font-size: 18px;
 }
 
 a:hover {
