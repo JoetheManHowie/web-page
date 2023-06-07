@@ -10,7 +10,7 @@ post_files = os.listdir(post_dir)
 # Create a list of links to each blog post
 post_links = ""
 for post_file in post_files:
-    if post_file.endswith(".html"):
+    if post_file.endswith(".html") and post_file != "template.html":
         post_file_name = " ".join(post_file.split(".")[0].split("_"))
         post_links += f"<li><a href='posts/{post_file}'>{post_file_name}</a></li>"
 

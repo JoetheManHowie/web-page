@@ -4,7 +4,7 @@
     padding: 0;
     box-sizing: border-box;
   }
-  
+
   /* set font family and size */
   body {
     font-family: 'Roboto', sans-serif;
@@ -12,7 +12,7 @@
     background-color: #1e1e1e;
     color: #fff;
   }
-  
+
   /* style for the header */
   header {
     display: flex;
@@ -22,14 +22,14 @@
     background-color: #0d0d0d;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
-  
+
   header h1 {
     font-size: 2rem;
     font-weight: bold;
     color: #fff;
     margin-left: 10px;
   }
-  
+
   header img {
     height: 100px;
     width: 100px;
@@ -37,50 +37,50 @@
     object-fit: cover;
     margin-right: 10px;
   }
-  
+
   /* style for the navigation */
   nav ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  
+
   nav li {
     list-style: none;
     margin-right: 1.5rem;
   }
-  
+
   nav a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.2s ease-in-out;
   }
-  
+
   nav a:hover {
     color: #0085FF;
   }
-  
+
   /* style for the main content */
   main {
     padding: 2rem;
     background-color: #1e1e1e;
     min-height: calc(100vh - 130px);
   }
-  
+
   main h2 {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
     color: #fff;
   }
-  
+
   main p {
     line-height: 1.5;
     margin-bottom: 1.5rem;
     color: #ccc;
   }
-  
+
   /* style for the footer */
   footer {
     padding: 1rem 2rem;
@@ -88,40 +88,40 @@
     border-top: 1px solid #333;
     text-align: center;
   }
-  
+
   footer p {
     font-size: 0.8rem;
     color: #ccc;
   }
-  
+
   /* media query for smaller screens */
   @media only screen and (max-width: 768px) {
     header {
       padding: 1rem;
     }
-  
+
     header img {
       height: 80px;
       width: 80px;
     }
-  
+
     header h1 {
       font-size: 1.5rem;
       margin-left: 5px;
     }
-  
+
     nav li {
       margin-right: 1rem;
     }
-  
+
     main {
       padding: 1rem;
     }
-  
+
     main h2 {
       font-size: 1.25rem;
     }
-  
+
     footer p {
       font-size: 0.7rem;
     }
@@ -129,7 +129,7 @@
   ul {
     padding-left: 20px; /* adds padding to the left of the list */
   }
-  
+
   li {
     margin-bottom: 5px; /* adds spacing between the list items */
     padding-left: 10px; /* adds padding to the left of the list */
@@ -137,6 +137,41 @@
   nav h1 {
     text-align: left;
   }
-  p {
+  /* p {
   margin-bottom: 50px; /* set to your desired value */
-  }
+  /* } */
+
+  pre {
+  background-color: #282c34;
+  color: #abb2bf;
+  padding: 1em;
+  border-radius: 0.5em;
+  overflow: auto;
+}
+
+pre code {
+  display: block;
+  font-family: Consolas, monospace;
+  font-size: 14px;
+}
+
+pre code span {
+  color: #c678dd;
+}
+
+pre code span.comment {
+  color: #5c6370;
+}
+
+pre code span.keyword {
+  color: #c678dd;
+  font-weight: bold;
+}
+
+pre code span.string {
+  color: #98c379;
+}
+
+pre code span.number {
+  color: #d19a66;
+}

@@ -51,7 +51,7 @@ print_type(df)
 # Print table to terminal
 
 ###################
-print("Adding a row to the bottom")
+print("Adding a row to the bottom with concat")
 ### Adding rows one at a times
 new_row_entry = [[55.1, 1021, -150, 40, -102, "22:00"]]
 
@@ -61,6 +61,13 @@ new_row = pd.DataFrame(new_row_entry, columns=df.columns)#list(data.keys()))
 # appedn the new row to the bottom
 df = pd.concat([df, new_row], ignore_index=True)
 print_type(df)
+#####################
+print("With append")
+
+new_row = pd.DataFrame(new_row_entry, columns=df.columns)#list(data.keys()))
+
+# appedn the new row to the bottom
+df.append(new_row, ignore_index=True)
 #######################
 print("From csv")
 ## Read data from a csv
@@ -82,8 +89,11 @@ print_type(df)
 
 # Read from pickle file
 print("From pickle file")
-# Read the pickle file into a DataFrame
+# Read the pickle file into a the stored form, in this case a 2d array
 df = pd.read_pickle('temperature_data.pkl')
+
+# Create a DataFrame from the 2D array
+df = pd.DataFrame(data, columns=column_names)
 print(df)
 # Print the DataFrame
 print_type(df)

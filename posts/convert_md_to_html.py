@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import sys
+import os
 import pandas as pd
 import re
 from markdown_it import MarkdownIt
@@ -51,7 +52,25 @@ def convert_table_to_html(html_content):
 
 # Provide the input and output file paths
 input_file = sys.argv[1]
-output_file = sys.argv[2]
-
+temp_file = "temp.html"
+output_file = input_file.split(".")[0]+".html"
 # Convert Markdown to HTML with code block and table rendering
-convert_markdown_to_html(input_file, output_file)
+convert_markdown_to_html(input_file, temp_file)
+
+
+# Read the contents of input.html
+with open(temp_file, 'r') as file:
+    input_html = file.read()
+
+# Read the contents of template.html
+with open('template.html', 'r') as file:
+    template_html = file.read()
+
+# Insert the input.html content into the template
+output_html = template_html.replace('{CONTENT}', input_html)
+
+# Write the final HTML to a new file
+with open(output_file, 'w') as file:
+    file.write(output_html)
+
+os.system("rm temp.html")
