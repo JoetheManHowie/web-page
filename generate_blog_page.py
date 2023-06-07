@@ -22,6 +22,7 @@ html = f"""
     <meta charset="UTF-8">
     <title>My Blog</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="atom_icon.png" type="image/x-icon">
   </head>
   <body>
     <header>

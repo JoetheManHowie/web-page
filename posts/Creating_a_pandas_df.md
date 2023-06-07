@@ -38,7 +38,7 @@ import pandas as pd
 The easiest way to read data into a DataFrame is to use `pd.read_csv()` which as the name suggests reads in data from a comma separated value file (like an excel table). Here is a short list of some methods to read data into a DataFrame, and below we give examples with our temperature data on how to use them.
 
 ####  Read from csv
-A csv (or comma separated value) file that contains our temperature example can be [downloaded here.](https://joehowie.ca/example_scripts/Create_a_pandas_df/temperature_data.csv) With the data downloaded, you can now load it into a pandas DataFrame running the following python code.
+A csv (or comma separated value) file that contains our temperature example can be [downloaded here.](https://joehowie.ca/example_scripts/Creating_a_pandas_df/temperature_data.csv) With the data downloaded, you can now load it into a pandas DataFrame running the following python code.
 ```python
 import pandas as pd
 
@@ -51,7 +51,7 @@ See the docs page for more details on using [`pd.read_csv()`.](https://pandas.py
 
 #### Read from html
 
-Given that most of the world wide web consists of html pages, you are bound to run into to these table soon or later. We have prepared the temperature example data in a html format [downloadable here.](https://joehowie.ca/example_scripts/Create_a_pandas_df/temperature_data.pkl). Now that the data has been downloaded the following code can be executed to read the table into a pandas DataFrame.
+Given that most of the world wide web consists of html pages, you are bound to run into to these table soon or later. We have prepared the temperature example data in a html format [available here.](view-source:https://joehowie.ca/example_scripts/Creating_a_pandas_df/temperature_data.html) Now that the data has been downloaded the following code can be executed to read the table into a pandas DataFrame.
 
 ```python
 import pandas as pd
@@ -69,7 +69,7 @@ See the docs page for more details on [`pd.read_html()`.](https://pandas.pydata.
 
 #### Read from pickle
 
-Pickle is a python module for serializing data structures like dictionary or array data. If you have data stored as a python dictionary, you may save that data to a pickle file for later use in a separate program. The temperature data has been serialized using the python pickler (which is fun to say five times fast) and can be [downloaded from this link.](https://joehowie.ca/example_scripts/Create_a_pandas_df/temperature_data.pkl)
+Pickle is a python module for serializing data structures like dictionary or array data. If you have data stored as a python dictionary, you may save that data to a pickle file for later use in a separate program. The temperature data has been serialized using the python pickler (which is fun to say five times fast) and can be [downloaded from this link.](https://joehowie.ca/example_scripts/Creating_a_pandas_df/temperature_data.pkl)
 
 ```python
 import pandas as pd
