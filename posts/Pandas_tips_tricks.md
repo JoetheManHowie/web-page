@@ -29,17 +29,54 @@ Like many popular python libraries it is common practice to import pandas with t
 
 ## Reading Data into a Dataframe
 
-The easiest way to read data into a DataFrame is to use `pd.read_csv()` which as the name suggests reads in data from a comma separated value file (like an excel table). Here is a short list of some methods to read data into a DataFrame:
+The easiest way to read data into a DataFrame is to use `pd.read_csv()` which as the name suggests reads in data from a comma separated value file (like an excel table). Here is a short list of some methods to read data into a DataFrame, and below we give examples with our temperature data on how to use them.
 
-+ `pd.read_csv()` See [the docs page for more details](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html)
-+ `pd.read_pickle()` See [the docs page for more details](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_pickle.html)
-+ `pd.read_html()` See [the docs page for more details](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_html.html)
+####  Read from csv
+A csv (or comma separated value) file that contains our temperature example can be [downloaded here.](https://joehowie.ca/xample_scripts/temperature_data.csv) With the data downloaded, you can now load it into a pandas DataFrame running the following python code.
+```python
+import pandas as pd
 
+column_names = ["temperature", "pressure", "longitude", "latitude", "altitude", "time"] # column names, as they are not in the file itself
+df = pd.read_csv("temperature_data.csv", names=column_names) # load data with the column names passed in
+print(df)
+```
+See [the docs page for more details on using `pd.read_csv()`.](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html)
+
+### Read from html
+
+Given that most of the world wide web consists of html pages, you are bound to run into to these table soon or later. We have prepared the temperature example data in a html format [downloadable here.](https://joehowie.ca/example_scripts/temperature_data.html). Now that the data has been downloaded the following code can be executed to read the table into a pandas DataFrame.
+
+```python
+import pandas as pd
+
+# Read the HTML file and obtain a list of DataFrame objects
+dataframes = pd.read_html("temperature_data.html")
+# Access the desired DataFrame object (assuming it's the first one)
+df = dataframes[0]
+# Specify the column names
+df.columns = column_names
+print(df)
+```
+See [the docs page for more details on `pd.read_html()`.](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_html.html)
+
+### Read from pickle
+
+Pickle is a python module for serializing map data structures like dictionaries and json data. If you have data stored as a python dictionary, you may save that data to a pickle file for later use in a separate program. The temperature data has been serialized using the python pickler (which is fun to say five times fast) and can be [downloaded from this link](https://joehowie.ca/example_scripts/temperature_data.pkl)
+
+See [the docs page for more details on `pd.read_pickle()`.](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_pickle.html)
+
+
+all three code snippets will print the following result:
+
+```yaml
+temperature  pressure  longitude  latitude  altitude   time
+0         55.5      1021       -140        46      -100  07:00
+1         56.5      1024       -180        46      -101  10:00
+2         55.8      1022       -140        56       -97  12:00
+3         54.5      1020       -180        36      -102  18:00
+4         57.5      1025       -140        36       -99  20:00
+```
 There are many more other file types, so take a look at [the docs](https://pandas.pydata.org/pandas-docs/stable/reference/api/) for more on these methods. Below we give examples for importing data using the three methods above.
-
-### Read from csv
-
-A csv (or comma separated value) file that contains our temperature example is [linked here](https://joehowie.ca/python_example_scripts/temperature_data.csv)
 
 
 ## Building a DataFrame from Scratch

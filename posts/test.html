@@ -63,7 +63,7 @@
 <p>Like many popular python libraries it is common practice to import pandas with the alias pd.</p>
 <p><code>import pandas as pd</code></p>
 <h2>Reading Data into a Dataframe</h2>
-<p>The easiest way to read data into a DataFrame is to use <code>pd.read_csv()</code> which as the name suggests reads in data from a comma separated value file (like an excel table). Here is a short list of some methods to read data into a DataFrame:</p>
+<p>The easiest way to read data into a DataFrame is to use <code>pd.read_csv()</code> which as the name suggests reads in data from a comma separated value file (like an excel table). Here is a short list of some methods to read data into a DataFrame, and below we give examples with our temperature data on how to use them.</p>
 <ul>
 <li><code>pd.read_csv()</code> See <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html">the docs page for more details</a></li>
 <li><code>pd.read_pickle()</code> See <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_pickle.html">the docs page for more details</a></li>
@@ -71,7 +71,19 @@
 </ul>
 <p>There are many more other file types, so take a look at <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/">the docs</a> for more on these methods. Below we give examples for importing data using the three methods above.</p>
 <h3>Read from csv</h3>
-<p>A csv (or comma separated value) file that contains our temperature example is <a href="https://joehowie.ca/python_example_scripts/temperature_data.csv">linked here</a></p>
+<p>A csv (or comma separated value) file that contains our temperature example can be <a href="https://joehowie.ca/python_example_scripts/temperature_data.csv">downloaded here.</a> With the data downloaded, you can now load it into a pandas DataFrame running the following python code.</p>
+<pre><code class="language-python">import pandas as pd
+
+column_names = [&quot;temperature&quot;, &quot;pressure&quot;, &quot;longitude&quot;, &quot;latitude&quot;, &quot;altitude&quot;, &quot;time&quot;]
+df = pd.read_csv(&quot;temperature_data.csv&quot;, names=column_names)
+</code></pre>
+<pre><code class="language-yaml">temperature  pressure  longitude  latitude  altitude   time
+0         55.5      1021       -140        46      -100  07:00
+1         56.5      1024       -180        46      -101  10:00
+2         55.8      1022       -140        56       -97  12:00
+3         54.5      1020       -180        36      -102  18:00
+4         57.5      1025       -140        36       -99  20:00
+</code></pre>
 <h2>Building a DataFrame from Scratch</h2>
 <p>If you have your data already in a python script; because it is generated in your code; or stored as a series of lists; or in a python dictionary; then you can add it to a DataFrame directly by calling the object.</p>
 <p>Using our example from above, suppose that we have six python list each with the measurements for the six columns. That is, the index of each list correspond to the row indices of the DataFrame we wish to build.</p>

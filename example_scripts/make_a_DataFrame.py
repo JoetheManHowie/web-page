@@ -80,5 +80,10 @@ df.columns = column_names
 print_type(df)
 ###############
 
-
-## Check types
+# Read from pickle file
+print("From pickle file")
+# Read the pickle file into a DataFrame
+df = pd.read_pickle('temperature_data.pkl')
+print(df)
+# Print the DataFrame
+print_type(df)
